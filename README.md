@@ -1,34 +1,5 @@
 # 🐾 PawFinders - Pet Adoption System
 
-<div align="center">
-
-![Pet Adoption](https://img.shields.io/badge/Pet-Adoption-orange?style=for-the-badge)
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
-![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
-![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white)
-
-*A comprehensive web application for pet adoption, lost pet tracking, donations, and veterinary services.*
-
-</div>
-
----
-
-## 📋 Table of Contents
-
-- [Project Description](#-project-description)
-- [Project Details](#-project-details)
-- [Tech Stack](#-tech-stack)
-- [Getting Started](#-getting-started)
-  - [Frontend Setup](#frontend-setup)
-  - [Backend Setup](#backend-setup)
-- [Project Structure](#-project-structure)
-- [Contributing](#-contributing)
-- [Contact](#-contact)
-
----
-
 ## � Project Description
 
 **PawFinders** is a full-stack web application designed to connect loving homes with pets in need. The platform serves as a comprehensive solution for pet adoption management, combining modern web technologies with AI-powered features to create a seamless experience for both pet owners and adopters.
