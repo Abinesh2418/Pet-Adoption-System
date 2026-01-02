@@ -38,9 +38,15 @@ uploads/*
 *.pt
 *.pth
 
+# Data files (PDFs, datasets)
+*.pdf
+*.npy
+*.npz
+*.csv
+*.tsv
+
 # Keep essential model files
 !backend/model/create_model_template.py
-!backend/model/allDogsLables.npy
 
 # IDEs
 .vscode/
