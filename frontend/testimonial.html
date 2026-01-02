@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>PET SHOP - Pet Shop Website Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">  
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto:wght@700&display=swap" rel="stylesheet">  
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="lib/flaticon/font/flaticon.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<style>
+    .pet-card-link {
+        text-decoration: none; /* Remove underline */
+        color: inherit; /* Inherit the color */
+    }
+
+    .pet-card-link:hover .pet-card {
+        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.15); /* Add hover effect */
+        transform: scale(1.02); /* Slight zoom effect */
+    }
+
+    .search-bar {
+        max-width: 500px;
+        margin: 0 auto 30px;
+    }
+
+    .pet-card {
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        text-align: center;
+        height: 10%;
+    }
+
+    .pet-card img {
+        width: 50%;
+        height: 250px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+    .map-container iframe {
+            width: 100%;
+            height: 500px;
+            border-radius: 10px;
+        }
+    
+    table {
+        width: 100%;
+        border-spacing: 20px;
+    }
+
+    td {
+        vertical-align: top;
+        width: 50%;
+    }
+        .upload-section {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .details-container {
+            display: none;
+            background: #2e7d32;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .adoption-box {
+        background: #f8f9fa;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+        width: 50%;
+        margin: 0 auto;
+    }
+    .adoption-box h3 {
+        font-weight: bold;
+        color: #333;
+    }
+    .adoption-box p {
+        color: #666;
+    }
+    .adoption-box .btn {
+        font-size: 18px;
+        padding: 10px 20px;
+        font-weight: bold;
+    }
+</style>
+
+<style>
+    
+    .brand-identifier {
+           display: flex;
+           justify-content: center;
+           background: linear-gradient(90deg, #FF6B6B, #FFE66D, #4ECDC4, #6A5ACD, #FF6B6B);
+           background-size: 400% 400%;
+           animation: gradient-shift 10s ease infinite;
+           padding: 20px 30px;
+           border-radius: 15px;
+           box-shadow: 0 15px 35px rgba(0,0,0,0.5), inset 0 0 15px rgba(255,255,255,0.3);
+           position: relative;
+           overflow: hidden;
+       }
+       
+       .brand-identifier span {
+           font-family: 'Poppins', sans-serif;
+           font-size: 48px;
+           font-weight: 800;
+           display: inline-block;
+           color: white;
+           text-shadow: 3px 3px 6px rgba(0,0,0,0.3), 0 0 20px rgba(255,255,255,0.5);
+           animation: float 2s ease-in-out infinite;
+           animation-delay: calc(0.2s * var(--i));
+           margin: 0 2px;
+           position: relative;
+       }
+       @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap');
+
+       .brand-identifier span::after {
+           content: '';
+           position: absolute;
+           bottom: 5px;
+           left: 0;
+           width: 100%;
+           height: 4px;
+           background: rgba(255,255,255,0.7);
+           border-radius: 50%;
+           filter: blur(4px);
+           opacity: 0.7;
+       }
+       
+       @keyframes gradient-shift {
+           0% { background-position: 0% 50%; }
+           50% { background-position: 100% 50%; }
+           100% { background-position: 0% 50%; }
+       }
+       
+       @keyframes float {
+           0% { transform: translateY(0); }
+           50% { transform: translateY(-10px); }
+           100% { transform: translateY(0); }
+       }
+       
+       @media (max-width: 768px) {
+           .brand-identifier span {
+               font-size: 36px;
+           }
+       }
+        /* Add sparkle effects */
+        .brand-identifier::before {
+           content: '';
+           position: absolute;
+           top: -50%;
+           left: -60%;
+           width: 200%;
+           height: 200%;
+           background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%);
+           opacity: 0.2;
+           animation: sparkle 6s linear infinite;
+           pointer-events: none;
+       }
+       
+       @keyframes sparkle {
+           0% { transform: translateX(-30%) translateY(-20%) rotate(0deg); opacity: 0; }
+           20% { opacity: 0.6; }
+           100% { transform: translateX(30%) translateY(20%) rotate(360deg); opacity: 0; }
+       }
+       
+       @keyframes gradient-shift {
+           0% { background-position: 0% 50%; }
+           50% { background-position: 100% 50%; }
+           100% { background-position: 0% 50%; }
+       }
+
+       .brand-identifier span {
+           display: inline-block;
+           transform: translateY(0);
+           animation: letter-float 3s ease-in-out infinite;
+           animation-delay: calc(0.1s * var(--i));
+           position: relative;
+           z-index: 1;
+       }
+       
+       /* Enhanced floating animation for letters */
+       @keyframes letter-float {
+           0%, 100% { transform: translateY(0) rotate(0deg); text-shadow: 0 0 10px rgba(255,255,255,0.8); }
+           25% { transform: translateY(-10px) rotate(-5deg); text-shadow: 0 0 15px rgba(255,255,255,0.9), 0 0 20px var(--accent); }
+           75% { transform: translateY(-5px) rotate(5deg); text-shadow: 0 0 15px rgba(255,255,255,0.9), 0 0 20px var(--primary); }
+       }
+       
+       /* Add colorful styles to individual letters */
+       .brand-identifier span:nth-child(odd) {
+           color: #fff;
+           text-shadow: 0 0 10px var(--primary), 0 0 20px rgba(255,107,107,0.8);
+       }
+       
+       .brand-identifier span:nth-child(even) {
+           color: #fff;
+           text-shadow: 0 0 10px var(--secondary), 0 0 20px rgba(78,205,196,0.8);
+       }
+       
+       .brand-identifier span:nth-child(3n) {
+           color: #fff;
+           text-shadow: 0 0 10px var(--accent), 0 0 20px rgba(255,230,109,0.8);
+       }
+       .animated-element {
+           transition: all 0.5s ease;
+           animation: float 3s ease-in-out infinite;
+       }
+       
+       @keyframes float {
+           0% { transform: translateY(0px); }
+           50% { transform: translateY(-10px); }
+           100% { transform: translateY(0px); }
+       }
+        /* Enhanced Top Bar */
+        .topbar {
+           background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+           color: white;
+           padding: 10px 0;
+           box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+       }
+       
+       .topbar i {
+           background-color: rgba(255, 255, 255, 0.2);
+           border-radius: 50%;
+           height: 50px;
+           width: 50px;
+           line-height: 50px;
+           text-align: center;
+           margin-right: 15px;
+           transition: all 0.3s;
+       }
+       
+       .topbar i:hover {
+           background-color: white;
+           color: var(--primary);
+           transform: rotate(10deg);
+       }
+       
+       /* Enhanced Navbar */
+       .navbar {
+           background-color: white !important;
+           box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+       }
+       
+       .navbar-brand h1 {
+           color: var(--dark);
+           text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1);
+       }
+       
+       .navbar-brand i {
+           color: var(--primary);
+       }
+       
+       .nav-item .nav-link {
+       font-family: 'Roboto', sans-serif;
+       position: relative;
+       margin-left: 30px;
+       padding: 30px 0;
+       font-size: 18px;
+       font-weight: 700;
+       text-transform: uppercase;
+       color: var(--dark);
+       outline: none;
+       transition: .9s;
+       }
+       
+       .nav-item .nav-link:hover {
+           background-color: rgba(255, 107, 107, 0.1);
+           color: var(--primary);
+           transform: translateY(-3px);
+       }
+       
+       .nav-item .nav-link.active {
+           background-color: rgba(255, 107, 107, 0.2);
+           color: var(--primary);
+       }
+       
+       .nav-contact {
+           background: linear-gradient(90deg, var(--primary), var(--secondary)) !important;
+   padding: 12px 25px;
+   margin-left: 15px;
+   box-shadow: 0 4px 15px rgba(255, 107, 107, 0.5);
+   transition: 0.3s;
+}
+
+
+       .nav-contact:hover {
+           transform: translateY(-3px);
+           box-shadow: 0 6px 20px rgba(255, 107, 107, 0.6);
+       }
+
+       /* Enhanced Footer */
+       .bg-light {
+           background-color: #f8f9fa !important;
+       }
+       
+       .footer-top {
+           background-color: #f8f9fa;
+           padding: 70px 0 40px;
+       }
+       
+       .footer-info {
+           padding: 20px;
+           background-color: white;
+           border-radius: 15px;
+           box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+           transition: all 0.3s;
+       }
+       
+       .footer-info:hover {
+           transform: translateY(-5px);
+           box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+       }
+       
+       .footer-bottom {
+           background: linear-gradient(90deg, var(--dark) 0%, #23282f 100%);
+           padding: 20px 0;
+       }
+       
+       .newsletter-form {
+           position: relative;
+           overflow: hidden;
+           border-radius: 30px;
+           box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+       }
+       
+       .newsletter-form input {
+           border-radius: 30px;
+           padding: 15px 25px;
+           border: none;
+       }
+       
+       .newsletter-form button {
+           position: absolute;
+           right: 0;
+           top: 0;
+           height: 100%;
+           border-radius: 0 30px 30px 0;
+           padding: 0 25px;
+           background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+           border: none;
+           color: white;
+           font-weight: 600;
+           transition: all 0.3s;
+       }
+       
+       .newsletter-form button:hover {
+           background: linear-gradient(90deg, var(--secondary) 0%, var(--primary) 100%);
+       }
+        /* Enhanced Chatbot Button */
+        .chatbot-button {
+           position: fixed;
+           bottom: 30px;
+           right: 30px;
+           background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+           color: white;
+           padding: 15px 25px;
+           border-radius: 50px;
+           text-decoration: none;
+           box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+           font-size: 16px;
+           font-weight: 600;
+           display: flex;
+           align-items: center;
+           z-index: 9999;
+           transition: all 0.3s ease;
+       }
+       
+       .chatbot-button i {
+           margin-right: 10px;
+           font-size: 20px;
+           animation: pulse 2s infinite;
+       }
+       
+       .chatbot-button:hover {
+           background: linear-gradient(90deg, var(--secondary) 0%, var(--primary) 100%);
+           transform: scale(1.05) translateY(-5px);
+           box-shadow: 0px 12px 25px rgba(0, 0, 0, 0.25);
+           color: white;
+           text-decoration: none;
+       }
+       
+       @keyframes pulse {
+           0% { transform: scale(1); }
+           50% { transform: scale(1.1); }
+           100% { transform: scale(1); }
+       }
+       
+   </style>
+
+<body>
+    <!-- Enhanced KSI-ISS032 Brand Identifier -->
+    <div class="brand-identifier">
+        <span style="--i:1">K</span>
+        <span style="--i:2">S</span>
+        <span style="--i:3">I</span>
+        <span style="--i:4">-</span>
+        <span style="--i:5">I</span>
+        <span style="--i:6">S</span>
+        <span style="--i:7">S</span>
+        <span style="--i:8">0</span>
+        <span style="--i:9">3</span>
+        <span style="--i:10">2</span>
+    </div>
+    <!-- Topbar Start -->
+    <div class="topbar">
+        <div class="container">
+            <div class="row g-0">
+                <div class="col-lg-4 text-center py-2">
+                    <div class="d-inline-flex align-items-center">
+                        <i class="bi bi-geo-alt fs-1 me-3"></i>
+                        <div class="text-start">
+                            <h6 class="text-uppercase mb-1 fw-bold">Find Us</h6>
+                            <span>123 Gandhi Nagar, Coimbatore</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 text-center py-2">
+                    <div class="d-inline-flex align-items-center">
+                        <i class="bi bi-envelope-open fs-1 me-3"></i>
+                        <div class="text-start">
+                            <h6 class="text-uppercase mb-1 fw-bold">Email Us</h6>
+                            <span>pawfinders@gmail.com</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 text-center py-2">
+                    <div class="d-inline-flex align-items-center">
+                        <i class="bi bi-phone-vibrate fs-1 me-3"></i>
+                        <div class="text-start">
+                            <h6 class="text-uppercase mb-1 fw-bold">Call Us</h6>
+                            <span>+91 78960 34678</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow-sm py-3 py-lg-0 px-3 px-lg-0 mb-5">
+        <a href="index.html" class="navbar-brand ms-lg-5">
+            <h1 class="m-0 text-uppercase text-dark"><i class="bi bi-shop fs-1 text-primary me-3"></i>Paw Finders</h1>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto py-0">
+                <a href="login.html" class="nav-item nav-link ">Logout</a>
+                <a href="index.html" class="nav-item nav-link">Home</a>
+                <a href="about.html" class="nav-item nav-link">About</a>
+                <a href="service.html" class="nav-item nav-link">Services</a>
+                <a href="product.html" class="nav-item nav-link">PETMEET</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                    <div class="dropdown-menu m-0">
+                        <a href="price.html" class="nav-item nav-link">Apply Adoption</a>
+                        <a href="testimonial.html" class="nav-item nav-link">Browse Pets</a>
+                        <a href="blog.html" class="nav-item nav-link">Donate Pets</a>    
+                        <a href="retrieve.html" class="nav-item nav-link">View Lost Pets</a>
+                    </div>
+                </div>
+                <a href="contact.html" class="nav-item nav-link nav-contact bg-primary text-white px-5 ms-lg-5">Contact <i class="bi bi-arrow-right"></i></a>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+     <!-- SHOW DETAILS SCRIPT-->>
+ <script>
+                    function showDetails(name, description, location, color, weight, gender, vaccinations, mapUrl) {
+                        document.getElementById("dog-name").innerText = name;
+                        document.getElementById("dog-description").innerText = description;
+                        document.getElementById("dog-location").innerText = location;
+                        document.getElementById("dog-color").innerText = color;
+                        document.getElementById("dog-weight").innerText = weight;
+                        document.getElementById("dog-gender").innerText = gender;
+                        document.getElementById("dog-vaccinations").innerText = vaccinations;
+                        
+                        // Update the Google Map dynamically
+                        document.getElementById("dog-map").src = mapUrl;
+                
+                        // Show the details container
+                        document.getElementById("details-container").style.display = "block";
+                    }
+                </script>
+
+    <!-- PetSearch Script-->
+    <script>
+        function searchPet() {
+            let input = document.getElementById("searchInput").value.toLowerCase();
+            let petCards = document.getElementsByClassName("pet-card");
+    
+            for (let i = 0; i < petCards.length; i++) {
+                let petName = petCards[i].getAttribute("data-name").toLowerCase();
+                if (petName.includes(input)) {
+                    petCards[i].style.display = "block"; // Show matching pets
+                } else {
+                    petCards[i].style.display = "none"; // Hide non-matching pets
+                }
+            }
+        }
+    </script>
+<!-- Pet section-->
+    <body>
+        <div class="container">
+            <div class="pet-search-section">
+                <h2 class="animated-heading">
+                    <span class="gradient-text">Find Your Furry Friend</span> 🐾
+                </h2>
+                <p class="tagline">Reuniting lost souls with loving homes</p>
+            
+                <!-- Enhanced Search Bar -->
+                <div class="search-container">
+                    <div class="search-wrapper">
+                        <input type="text" 
+                               id="searchInput" 
+                               class="magic-search" 
+                               placeholder="🔍 Search by breed, color, or location..."
+                               onkeyup="searchPet()">
+                        <div class="search-border"></div>
+                        <button class="search-btn">
+                            <i class="fas fa-paw"></i> Search
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <style>
+            .pet-search-section {
+                padding: 3rem 1rem;
+                background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+                border-radius: 20px;
+                margin: 2rem auto;
+                max-width: 800px;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+                position: relative;
+                overflow: hidden;
+            }
+            
+            .animated-heading {
+                font-size: 2.5rem;
+                text-align: center;
+                margin-bottom: 1rem;
+                position: relative;
+                animation: float 3s ease-in-out infinite;
+            }
+            
+            @keyframes float {
+                0%, 100% { transform: translateY(0); }
+                50% { transform: translateY(-10px); }
+            }
+            
+            .gradient-text {
+                background: linear-gradient(45deg, #6C63FF, #FF6584, #4ECDC4);
+                -webkit-background-clip: text;
+                background-clip: text;
+                color: transparent;
+                animation: gradientShift 4s ease infinite;
+            }
+            
+            @keyframes gradientShift {
+                0% { background-position: 0% 50%; }
+                50% { background-position: 100% 50%; }
+                100% { background-position: 0% 50%; }
+            }
+            
+            .tagline {
+                text-align: center;
+                font-size: 1.2rem;
+                color: #6C63FF;
+                margin-bottom: 2rem;
+                font-weight: 500;
+                background: rgba(108,99,255,0.1);
+                padding: 0.5rem 1rem;
+                border-radius: 30px;
+                display: inline-block;
+                border: 2px solid #6C63FF;
+            }
+            
+            .search-container {
+                padding: 1rem;
+                position: relative;
+            }
+            
+            .search-wrapper {
+                position: relative;
+                max-width: 600px;
+                margin: 0 auto;
+            }
+            
+            .magic-search {
+                width: 100%;
+                padding: 1.5rem 2rem;
+                border: none;
+                border-radius: 50px;
+                font-size: 1.1rem;
+                background: white;
+                box-shadow: 0 5px 15px rgba(108,99,255,0.2);
+                transition: all 0.3s ease;
+                padding-right: 120px;
+            }
+            
+            .magic-search:focus {
+                outline: none;
+                box-shadow: 0 8px 25px rgba(108,99,255,0.3);
+                background: linear-gradient(45deg, #ffffff, #f8f7ff);
+            }
+            
+            .search-border {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border: 2px solid transparent;
+                border-radius: 50px;
+                animation: borderGlow 2s infinite;
+                pointer-events: none;
+            }
+            
+            @keyframes borderGlow {
+                0% { border-color: #6C63FF; opacity: 0.3; }
+                50% { border-color: #FF6584; opacity: 0.7; }
+                100% { border-color: #4ECDC4; opacity: 0.3; }
+            }
+            
+            .search-btn {
+                position: absolute;
+                right: 5px;
+                top: 50%;
+                transform: translateY(-50%);
+                padding: 0.8rem 1.5rem;
+                border: none;
+                border-radius: 40px;
+                background: linear-gradient(45deg, #6C63FF, #FF6584);
+                color: white;
+                font-weight: bold;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+            }
+            
+            .search-btn:hover {
+                transform: translateY(-50%) scale(1.05);
+                box-shadow: 0 5px 15px rgba(108,99,255,0.4);
+            }
+            
+            .search-btn i {
+                font-size: 1.2rem;
+            }
+            
+            /* Floating paw prints */
+            .pet-search-section::after {
+                content: '🐾';
+                position: absolute;
+                font-size: 1.5rem;
+                opacity: 0.3;
+                animation: pawFloat 20s linear infinite;
+            }
+            
+            @keyframes pawFloat {
+                0% { transform: translate(-100%, -100%); }
+                100% { transform: translate(100vw, 100vh); }
+            }
+            </style>
+            
+            <script>
+            // Add interactive placeholder animation
+            const searchInput = document.getElementById('searchInput');
+            
+            searchInput.addEventListener('focus', () => {
+                searchInput.placeholder = "🐶 Search by breed... 🐱";
+            });
+            
+            searchInput.addEventListener('blur', () => {
+                searchInput.placeholder = "🔍 Search by breed, color, or location...";
+            });
+            
+            // Add ripple effect on search button click
+            document.querySelector('.search-btn').addEventListener('click', function(e) {
+                const ripple = document.createElement('div');
+                ripple.style.position = 'absolute';
+                ripple.style.width = '20px';
+                ripple.style.height = '20px';
+                ripple.style.background = 'rgba(255,255,255,0.5)';
+                ripple.style.borderRadius = '50%';
+                ripple.style.transform = 'translate(-50%, -50%)';
+                ripple.style.pointerEvents = 'none';
+                ripple.style.animation = 'ripple 0.6s linear';
+                
+                this.appendChild(ripple);
+                setTimeout(() => ripple.remove(), 600);
+            });
+            
+            // Add keyframe for ripple effect
+            const style = document.createElement('style');
+            style.textContent = `
+            @keyframes ripple {
+                from { transform: scale(0); opacity: 1; }
+                to { transform: scale(10); opacity: 0; }
+            }`;
+            document.head.appendChild(style);
+            </script>
+                    <!-- Pet Cards -->
+                    <table class="table">
+                        <tr>
+                            <td colspan="2">
+                                <div class="pet-card" onclick="showDetails(
+                                    'Max', 
+                                    'Brown Labrador, friendly nature.', 
+                                    'Gandhipuram', 
+                                    'Brown', 
+                                    '10 kg', 
+                                    'Male', 
+                                    'DHPP, TWI, ZH', 
+                                    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15665.120055799049!2d76.95710773381593!3d11.01760518868321!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba85855910aed83%3A0x80875de5cd370a9d!2sGandhipuram%2C%20Tamil%20Nadu%20641012!5e0!3m2!1sen!2sin!4v1738822074321!5m2!1sen!2sin'
+                                )">
+                                    <img src="img/dog1.jpg" alt="Max">
+                                    <h5 class="mt-3">Max</h5>
+                                    <p><strong>Description:</strong>Brown Labrador, friendly nature.</p>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            
+                            <div class="pet-card princess-theme" 
+                            onclick="showDetails('Rocky', 'Small white Pomeranian, lost near park.', 'RS Puram', 'White', '5 kg', 'Male', 'Rabies, DHPP', 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15665.61931643951!2d76.94125573381396!3d11.008222339495049!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba8591c7f4e7ba5%3A0x55632b2830cb9f8a!2sR.S.%20Puram%2C%20Coimbatore%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1738822097855!5m2!1sen!2sin')">
+                           
+                           <!-- Main Content -->
+                           <div class="pet-content">
+                               <!-- Image with Floral Frame -->
+                               <div class="pet-image-frame">
+                                   <img src="img/dog2.jpg" alt="Rocky" class="pet-image">
+                       
+                               <!-- Pet Details -->
+                               <div class="pet-details">
+                                   <h3 class="pet-name"> Rocky </h3>
+                               </div>
+                           </div>
+                       </div>
+                       
+                            </td>
+                            <td>
+                                <div class="pet-card" onclick="showDetails(
+                                    'Bruno',  
+                                    'Golden Retriever, wearing a red collar.', 
+                                    'Saibaba Colony', 
+                                    'Golden', 
+                                    '12 kg', 
+                                    'Male', 
+                                    'Lepto, DHPP', 
+                                    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15665.73569892869!2d76.94056373381287!3d11.010699039247804!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba858a6e19e7d4b%3A0x9e4a6f5b162eb8e1!2sSaibaba%20Colony%2C%20Coimbatore%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1738822123456!5m2!1sen!2sin'
+                                )">
+                                    <img src="img/dog3.jpg" alt="Bruno">
+                                    <h5 class="mt-3">Bruno</h5>
+                                    <p><strong>Description:</strong>Golden Retriever, wearing a red collar.</p>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="pet-card" onclick="showDetails(
+                                    'Bella',  
+                                    'German Shepherd, last seen near station.', 
+                                    'Peelamedu', 
+                                    'Black & Tan', 
+                                    '14 kg', 
+                                    'Female', 
+                                    'DHPP, Rabies', 
+                                    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15664.717937021476!2d76.9975177338211!3d11.022634589047314!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba85a5f3b8b8dff%3A0xa2672e41f5b78a8b!2sPeelamedu%2C%20Coimbatore%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1738822145678!5m2!1sen!2sin'
+                                )">
+                                    <img src="img/dog4.jpg" alt="Bella">
+                                    <h5 class="mt-3">Bella</h5>
+                                    <p><strong>Description:</strong>German Shepherd, last seen near station.</p>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+
+        <!-- Pet Cards -->
+<table class="table">
+    <!-- Cats -->
+    <tr>
+        <td colspan="2">
+            <div class="pet-card" onclick="showDetails(
+                'Whiskers',  
+                'Playful Persian cat with fluffy fur.', 
+                'R.S. Puram', 
+                'White', 
+                '4 kg', 
+                'Male', 
+                'Rabies, FVRCP', 
+                'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15665.61931643951!2d76.94125573381396!3d11.008222339495049!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba8591c7f4e7ba5%3A0x55632b2830cb9f8a!2sR.S.%20Puram%2C%20Coimbatore%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1738822097855!5m2!1sen!2sin'
+            )">
+                <img src="img/cat1.jpg" alt="Whiskers">
+                <h5 class="mt-3">Whiskers</h5>
+                <p><strong>Description:</strong>Playful Persian cat with fluffy fur.</p>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div class="pet-card" onclick="showDetails(
+                'Mittens',  
+                'Short-haired tabby cat, very friendly.', 
+                'Gandhipuram', 
+                'Brown', 
+                '5 kg', 
+                'Female', 
+                'FVRCP, Rabies', 
+                'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15665.120055799049!2d76.95710773381593!3d11.01760518868321!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba85855910aed83%3A0x80875de5cd370a9d!2sGandhipuram%2C%20Tamil%20Nadu%20641012!5e0!3m2!1sen!2sin!4v1738822074321!5m2!1sen!2sin'
+            )">
+                <img src="img/cat2.jpg" alt="Mittens">
+                <h5 class="mt-3">Mittens</h5>
+                <p><strong>Description:</strong>Short-haired tabby cat, very friendly.</p>
+            </div>
+        </td>
+        <td>
+            <div class="pet-card" onclick="showDetails(
+                'Snowball',  
+                'Fluffy Himalayan cat, loves attention.', 
+                'Peelamedu', 
+                'Cream', 
+                '6 kg', 
+                'Male', 
+                'FVRCP, Rabies', 
+                '<https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15664.214870324799!2d77.00526053381965!3d11.034596687211705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba85824c7646fcb%3A0x3cbee12a8c82fcb9!2sPeelamedu%2C%20Maheshwari%20Nagar%2C%20Coimbatore%2C%20Tamil%20Nadu%20641004!5e0!3m2!1sen!2sin!4v1738873171443!5m2!1sen!2sin'
+            )">
+                <img src="img/cat3.jpg" alt="Snowball">
+                <h5 class="mt-3">Snowball</h5>
+                <p><strong>Description:</strong>Fluffy Himalayan cat, loves attention.</p>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <div class="pet-card" onclick="showDetails(
+                'Luna',  
+                'Energetic Bengal cat, loves playing.', 
+                'Avinashi Road', 
+                'Golden & Black', 
+                '5.5 kg', 
+                'Female', 
+                'Rabies, FVRCP', 
+                'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.100804949256!2d77.02604727412536!3d11.03106325444714!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba859b569f9c10d%3A0x3a21b1743fa4af15!2sAvinashi%20Rd%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1738873421587!5m2!1sen!2sin'
+            )">
+                <img src="img/cat4.jpg" alt="Luna">
+                <h5 class="mt-3">Luna</h5>
+                <p><strong>Description:</strong>Energetic Bengal cat, loves playing.</p>
+            </div>
+        </td>
+    </tr>
+
+    <!-- Rabbits -->
+    <tr>
+        <td colspan="2">
+            <div class="pet-card" onclick="showDetails(
+                'Coco',  
+                'Soft Angora rabbit, loves cuddles.', 
+                'Saibaba Colony', 
+                'White', 
+                '2 kg', 
+                'Male', 
+                'RHDV, Myxo', 
+                'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15664.791633522434!2d76.9349175338173!3d11.02377308814926!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba858e8f255ab59%3A0xfc7f5ba2980c0e3b!2sJawahar%20Nagar%2C%20Saibaba%20Colony%2C%20Coimbatore%2C%20Tamil%20Nadu%20641011!5e0!3m2!1sen!2sin!4v1738872915644!5m2!1sen!2sin'
+            )">
+                <img src="img/rabbit1.jpg" alt="Coco">
+                <h5 class="mt-3">Coco</h5>
+                <p><strong>Description:</strong>Soft Angora rabbit, loves cuddles.</p>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div class="pet-card" onclick="showDetails(
+                'Thumper',  
+                'Holland Lop rabbit, loves hopping.', 
+                'Race Course', 
+                'Brown & White', 
+                '2.5 kg', 
+                'Female', 
+                'RHDV, Myxo', 
+                'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15665.907753823129!2d76.9588278215873!3d11.002797993174196!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba859bae53eb1c5%3A0x2e51fc1049394542!2sRace%20Course%2C%20Coimbatore%2C%20Tamil%20Nadu%20641018!5e0!3m2!1sen!2sin!4v1738873071156!5m2!1sen!2sin'
+            )">
+                <img src="img/rabbit2.jpg" alt="Thumper">
+                <h5 class="mt-3">Thumper</h5>
+                <p><strong>Description:</strong>Holland Lop rabbit, loves hopping.</p>
+            </div>
+        </td>
+        <td>
+            <div class="pet-card" onclick="showDetails(
+                'BunBun',  
+                'Mini Rex rabbit, loves veggies.', 
+                'Ukkadam', 
+                'Black & White', 
+                '2.3 kg', 
+                'Male', 
+                'RHDV, Myxo', 
+                'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7833.262415161275!2d76.9604470878046!3d10.991184388758262!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba8599ff2d6b6b7%3A0x21dd600123cdb59e!2sUkkadam%2C%20Coimbatore%2C%20Tamil%20Nadu%20641001!5e0!3m2!1sen!2sin!4v1738873111300!5m2!1sen!2sin'
+            )">
+                <img src="img/rabbit3.jpg" alt="BunBun">
+                <h5 class="mt-3">BunBun</h5>
+                <p><strong>Description:</strong>Mini Rex rabbit, loves veggies.</p>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <div class="pet-card" onclick="showDetails(
+                'Oreo',  
+                'Dutch rabbit, playful and gentle.', 
+                'Selvapuram', 
+                'Black & White', 
+                '2.7 kg', 
+                'Female', 
+                'RHDV, Myxo', 
+                'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15666.740715333226!2d76.92901483380939!3d10.987118491318977!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba859409568f875%3A0xe1967c0742fe0bb6!2sSelvapuram%2C%20Tamil%20Nadu%20641008!5e0!3m2!1sen!2sin!4v1738872792012!5m2!1sen!2sin'
+            )">
+                <img src="img/rabbit4.jpg" alt="Oreo">
+                <h5 class="mt-3">Oreo</h5>
+                <p><strong>Description:</strong>Dutch rabbit, playful and gentle.</p>
+            </div>
+        </td>
+    </tr>
+</table>
+
+                    <!-- Pet Details Section (Will Appear Below the Clicked Dog) -->
+                    <div class="details-container" id="details-container">
+                        <h3 id="dog-name"></h3>
+                        <p><strong>Description:</strong> <span id="dog-description"></span></p>
+                        <p><strong>Location:</strong> <span id="dog-location"></span></p>
+                        <p><strong>Color:</strong> <span id="dog-color"></span></p>
+                        <p><strong>Weight:</strong> <span id="dog-weight"></span></p>
+                        <p><strong>Gender:</strong> <span id="dog-gender"></span></p>
+                        <p><strong>Vaccinations:</strong> <span id="dog-vaccinations"></span></p>
+            
+                        <!-- Google Maps Integration -->
+                        <h4>Pet Location</h4>
+                        <div class="map-container">
+                            <iframe id="dog-map" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+            
+                        <div class="adoption-box text-center mt-4">
+                            <h3>Ready to Adopt?</h3>
+                            <p>Give a loving home to a pet in need.</p>
+                            <a href="price.html" class="btn btn-primary btn-lg">Apply for Adoption</a>
+                        </div>
+                    </div>
+            </table>
+    <!-- Footer Start -->
+    <div class="container-fluid bg-light mt-5 py-5">
+        <div class="container pt-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-uppercase border-start border-5 border-primary ps-3 mb-4">Get In Touch</h5>
+                    <p class="mb-4">Pain is inevitable, but it is temporary. Challenges arise, but they are part of the process, and pain eventually fades.</p>
+                    <p class="mb-2"><i class="bi bi-geo-alt text-primary me-2"></i>123 Gandhi Nagar,Coimbatore</p>
+                    <p class="mb-2"><i class="bi bi-envelope-open text-primary me-2"></i>pawfinders@gmail.com</p>
+                    <p class="mb-0"><i class="bi bi-telephone text-primary me-2"></i>+91 78690 34678</p>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-uppercase border-start border-5 border-primary ps-3 mb-4">Quick Links</h5>
+                    <div class="d-flex flex-column justify-content-start">
+                        <a class="text-body mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Home</a>
+                        <a class="text-body mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>About Us</a>
+                        <a class="text-body mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Our Services</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-uppercase border-start border-5 border-primary ps-3 mb-4">Popular Links</h5>
+                    <div class="d-flex flex-column justify-content-start">
+                        <a class="text-body mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Home</a>
+                        <a class="text-body mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>About Us</a>
+                        <a class="text-body mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Our Services</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-uppercase border-start border-5 border-primary ps-3 mb-4">Newsletter</h5>
+                    <form action="">
+                        <div class="input-group">
+                            <input type="text" class="form-control p-3" placeholder="Your Email">
+                            <button class="btn btn-primary">Sign Up</button>
+                        </div>
+                    </form>
+                    <h6 class="text-uppercase mt-4 mb-3">Follow Us</h6>
+                    <div class="d-flex">
+                        <a class="btn btn-outline-primary btn-square me-2" href="#"><i class="bi bi-twitter"></i></a>
+                        <a class="btn btn-outline-primary btn-square me-2" href="#"><i class="bi bi-facebook"></i></a>
+                        <a class="btn btn-outline-primary btn-square me-2" href="#"><i class="bi bi-linkedin"></i></a>
+                        <a class="btn btn-outline-primary btn-square" href="#"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-12 text-center text-body">
+                    <a class="text-body" href="">Terms & Conditions</a>
+                    <span class="mx-1">|</span>
+                    <a class="text-body" href="">Privacy Policy</a>
+                    <span class="mx-1">|</span>
+                    <a class="text-body" href="">Customer Support</a>
+                    <span class="mx-1">|</span>
+                    <a class="text-body" href="">Payments</a>
+                    <span class="mx-1">|</span>
+                    <a class="text-body" href="">Help</a>
+                    <span class="mx-1">|</span>
+                    <a class="text-body" href="">FAQs</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid bg-dark text-white-50 py-4">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-md-0">&copy; <a class="text-white" href="#">Paw Finders</a>. All Rights Reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="mb-0">Designed by <a class="text-white" href="https://htmlcodex.com">PawFinders Codex</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+<!-- Chatbot Button -->
+<a href="http://localhost:8080/" target="_blank" class="chatbot-button">
+    <i class="fas fa-comments"></i>Pet Care Tips
+</a>
+   
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-primary py-3 fs-4 back-to-top"><i class="bi bi-arrow-up"></i></a>
+    <script>
+        function searchPet() {
+            let input = document.getElementById("searchInput").value.toLowerCase();
+            let petCards = document.getElementsByClassName("pet-card");
+            
+            for (let i = 0; i < petCards.length; i++) {
+                let petName = petCards[i].getElementsByTagName("h5")[0].innerText.toLowerCase();
+                if (petName.includes(input)) {
+                    petCards[i].parentElement.style.display = "block";
+                } else {
+                    petCards[i].parentElement.style.display = "none";
+                }
+            }
+        }
+    </script>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+<style>
+    .chatbot-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #28a745;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    z-index: 9999; /* Ensure it stays on top */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth hover effect */
+}
+
+.chatbot-button i {
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+.chatbot-button:hover {
+    background-color: #218838;
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+</style>
+</html>

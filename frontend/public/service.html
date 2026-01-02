@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>PET SHOP - Pet Shop Website Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+     <!-- Favicon -->
+     <link href="img/favicon.ico" rel="icon">
+
+     <!-- Google Web Fonts -->
+     <link rel="preconnect" href="https://fonts.gstatic.com">
+     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">  
+     <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto:wght@700&display=swap" rel="stylesheet">  
+ 
+     <!-- Icon Font Stylesheet -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+     <link href="lib/flaticon/font/flaticon.css" rel="stylesheet">
+     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+ 
+     <!-- Libraries Stylesheet -->
+     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+     <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" rel="stylesheet">
+     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+ 
+     <!-- Customized Bootstrap Stylesheet -->
+     <link href="css/bootstrap.min.css" rel="stylesheet">
+ 
+     <!-- Template Stylesheet -->
+     <link href="css/style.css" rel="stylesheet">
+</head>
+<style>
+    
+     .brand-identifier {
+            display: flex;
+            justify-content: center;
+            background: linear-gradient(90deg, #FF6B6B, #FFE66D, #4ECDC4, #6A5ACD, #FF6B6B);
+            background-size: 400% 400%;
+            animation: gradient-shift 10s ease infinite;
+            padding: 20px 30px;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5), inset 0 0 15px rgba(255,255,255,0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .brand-identifier span {
+            font-family: 'Poppins', sans-serif;
+            font-size: 48px;
+            font-weight: 800;
+            display: inline-block;
+            color: white;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.3), 0 0 20px rgba(255,255,255,0.5);
+            animation: float 2s ease-in-out infinite;
+            animation-delay: calc(0.2s * var(--i));
+            margin: 0 2px;
+            position: relative;
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap');
+
+        .brand-identifier span::after {
+            content: '';
+            position: absolute;
+            bottom: 5px;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: rgba(255,255,255,0.7);
+            border-radius: 50%;
+            filter: blur(4px);
+            opacity: 0.7;
+        }
+        
+        @keyframes gradient-shift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
+        }
+        
+        @media (max-width: 768px) {
+            .brand-identifier span {
+                font-size: 36px;
+            }
+        }
+         /* Add sparkle effects */
+         .brand-identifier::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -60%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%);
+            opacity: 0.2;
+            animation: sparkle 6s linear infinite;
+            pointer-events: none;
+        }
+        
+        @keyframes sparkle {
+            0% { transform: translateX(-30%) translateY(-20%) rotate(0deg); opacity: 0; }
+            20% { opacity: 0.6; }
+            100% { transform: translateX(30%) translateY(20%) rotate(360deg); opacity: 0; }
+        }
+        
+        @keyframes gradient-shift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .brand-identifier span {
+            display: inline-block;
+            transform: translateY(0);
+            animation: letter-float 3s ease-in-out infinite;
+            animation-delay: calc(0.1s * var(--i));
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Enhanced floating animation for letters */
+        @keyframes letter-float {
+            0%, 100% { transform: translateY(0) rotate(0deg); text-shadow: 0 0 10px rgba(255,255,255,0.8); }
+            25% { transform: translateY(-10px) rotate(-5deg); text-shadow: 0 0 15px rgba(255,255,255,0.9), 0 0 20px var(--accent); }
+            75% { transform: translateY(-5px) rotate(5deg); text-shadow: 0 0 15px rgba(255,255,255,0.9), 0 0 20px var(--primary); }
+        }
+        
+        /* Add colorful styles to individual letters */
+        .brand-identifier span:nth-child(odd) {
+            color: #fff;
+            text-shadow: 0 0 10px var(--primary), 0 0 20px rgba(255,107,107,0.8);
+        }
+        
+        .brand-identifier span:nth-child(even) {
+            color: #fff;
+            text-shadow: 0 0 10px var(--secondary), 0 0 20px rgba(78,205,196,0.8);
+        }
+        
+        .brand-identifier span:nth-child(3n) {
+            color: #fff;
+            text-shadow: 0 0 10px var(--accent), 0 0 20px rgba(255,230,109,0.8);
+        }
+        .animated-element {
+            transition: all 0.5s ease;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+         /* Enhanced Top Bar */
+         .topbar {
+            background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 10px 0;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .topbar i {
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            height: 50px;
+            width: 50px;
+            line-height: 50px;
+            text-align: center;
+            margin-right: 15px;
+            transition: all 0.3s;
+        }
+        
+        .topbar i:hover {
+            background-color: white;
+            color: var(--primary);
+            transform: rotate(10deg);
+        }
+        
+        /* Enhanced Navbar */
+        .navbar {
+            background-color: white !important;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        }
+        
+        .navbar-brand h1 {
+            color: var(--dark);
+            text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1);
+        }
+        
+        .navbar-brand i {
+            color: var(--primary);
+        }
+        
+        .nav-item .nav-link {
+        font-family: 'Roboto', sans-serif;
+        position: relative;
+        margin-left: 30px;
+        padding: 30px 0;
+        font-size: 18px;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: var(--dark);
+        outline: none;
+        transition: .9s;
+        }
+        
+        .nav-item .nav-link:hover {
+            background-color: rgba(255, 107, 107, 0.1);
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        .nav-item .nav-link.active {
+            background-color: rgba(255, 107, 107, 0.2);
+            color: var(--primary);
+        }
+        
+        .nav-contact {
+            background: linear-gradient(90deg, var(--primary), var(--secondary)) !important;
+    padding: 12px 25px;
+    margin-left: 15px;
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.5);
+    transition: 0.3s;
+}
+
+
+        .nav-contact:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.6);
+        }
+
+        /* Enhanced Footer */
+        .bg-light {
+            background-color: #f8f9fa !important;
+        }
+        
+        .footer-top {
+            background-color: #f8f9fa;
+            padding: 70px 0 40px;
+        }
+        
+        .footer-info {
+            padding: 20px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+        }
+        
+        .footer-info:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .footer-bottom {
+            background: linear-gradient(90deg, var(--dark) 0%, #23282f 100%);
+            padding: 20px 0;
+        }
+        
+        .newsletter-form {
+            position: relative;
+            overflow: hidden;
+            border-radius: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .newsletter-form input {
+            border-radius: 30px;
+            padding: 15px 25px;
+            border: none;
+        }
+        
+        .newsletter-form button {
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 100%;
+            border-radius: 0 30px 30px 0;
+            padding: 0 25px;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+            border: none;
+            color: white;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .newsletter-form button:hover {
+            background: linear-gradient(90deg, var(--secondary) 0%, var(--primary) 100%);
+        }
+         /* Enhanced Chatbot Button */
+         .chatbot-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+            font-size: 16px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            z-index: 9999;
+            transition: all 0.3s ease;
+        }
+        
+        .chatbot-button i {
+            margin-right: 10px;
+            font-size: 20px;
+            animation: pulse 2s infinite;
+        }
+        
+        .chatbot-button:hover {
+            background: linear-gradient(90deg, var(--secondary) 0%, var(--primary) 100%);
+            transform: scale(1.05) translateY(-5px);
+            box-shadow: 0px 12px 25px rgba(0, 0, 0, 0.25);
+            color: white;
+            text-decoration: none;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+    </style>
+<body>
+     <!-- Enhanced KSI-ISS032 Brand Identifier -->
+     <div class="brand-identifier">
+        <span style="--i:1">K</span>
+        <span style="--i:2">S</span>
+        <span style="--i:3">I</span>
+        <span style="--i:4">-</span>
+        <span style="--i:5">I</span>
+        <span style="--i:6">S</span>
+        <span style="--i:7">S</span>
+        <span style="--i:8">0</span>
+        <span style="--i:9">3</span>
+        <span style="--i:10">2</span>
+    </div>
+
+   <!-- Topbar Start -->
+    <div class="topbar">
+        <div class="container">
+            <div class="row g-0">
+                <div class="col-lg-4 text-center py-2">
+                    <div class="d-inline-flex align-items-center">
+                        <i class="bi bi-geo-alt fs-1 me-3"></i>
+                        <div class="text-start">
+                            <h6 class="text-uppercase mb-1 fw-bold">Find Us</h6>
+                            <span>123 Gandhi Nagar, Coimbatore</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 text-center py-2">
+                    <div class="d-inline-flex align-items-center">
+                        <i class="bi bi-envelope-open fs-1 me-3"></i>
+                        <div class="text-start">
+                            <h6 class="text-uppercase mb-1 fw-bold">Email Us</h6>
+                            <span>pawfinders@gmail.com</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 text-center py-2">
+                    <div class="d-inline-flex align-items-center">
+                        <i class="bi bi-phone-vibrate fs-1 me-3"></i>
+                        <div class="text-start">
+                            <h6 class="text-uppercase mb-1 fw-bold">Call Us</h6>
+                            <span>+91 78960 34678</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow-sm py-3 py-lg-0 px-3 px-lg-0 mb-5">
+        <a href="index.html" class="navbar-brand ms-lg-5">
+            <h1 class="m-0 text-uppercase text-dark"><i class="bi bi-shop fs-1 text-primary me-3"></i>Paw Finders</h1>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto py-0">
+                <a href="login.html" class="nav-item nav-link ">Logout</a>
+                <a href="index.html" class="nav-item nav-link">Home</a>
+                <a href="about.html" class="nav-item nav-link">About</a>
+                <a href="service.html" class="nav-item nav-link active">Services</a>
+                <a href="product.html" class="nav-item nav-link">PETMEET</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                    <div class="dropdown-menu m-0">
+                        <a href="price.html" class="nav-item nav-link">Apply Adoption</a>
+                        <a href="testimonial.html" class="nav-item nav-link">Browse Pets</a>
+                        <a href="blog.html" class="nav-item nav-link">Donate Pets</a>
+                        <a href="retrieve.html" class="nav-item nav-link">View Lost Pets</a>
+                    </div>
+                </div>
+                <a href="contact.html" class="nav-item nav-link nav-contact bg-primary text-white px-5 ms-lg-5">Contact <i class="bi bi-arrow-right"></i></a>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+    
+
+   <!-- Services Start -->
+<div class="container-fluid py-5">
+    <div class="container">
+        <div class="row gx-5">
+            <div class="col-lg-5 mb-5 mb-lg-0" style="min-height: 500px;">
+                <div class="position-relative h-100 service-img">
+                    <img class="position-absolute w-100 h-100 rounded" src="img/cat2.jpg" style="object-fit: cover;">
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <div class="border-start border-5 border-primary ps-5 mb-5">
+                    <h6 class="text-primary text-uppercase fw-bold">Services</h6>
+                    <h1 class="display-5 text-uppercase mb-0">Our Excellent Pet Care Services</h1>
+                </div>
+                <div class="bg-light p-4 rounded-3 service-tabs">
+                    <ul class="nav nav-pills justify-content-between mb-3" id="service-tab" role="tablist">
+                        <li class="nav-item w-50" role="presentation">
+                            <button class="nav-link text-uppercase w-100 active" id="service-1-tab" data-bs-toggle="pill"
+                                data-bs-target="#service-1" type="button" role="tab" aria-controls="service-1"
+                                aria-selected="true">Pet Training</button>
+                        </li>
+                        <li class="nav-item w-50" role="presentation">
+                            <button class="nav-link text-uppercase w-100" id="service-2-tab" data-bs-toggle="pill"
+                                data-bs-target="#service-2" type="button" role="tab" aria-controls="service-2"
+                                aria-selected="false">Pet Exercise</button>
+                        </li>
+                    </ul>
+                    <div class="tab-content service-content" id="service-tabContent">
+                        <div class="tab-pane fade show active" id="service-1" role="tabpanel" aria-labelledby="service-1-tab">
+                            <p class="mb-0">Training your pet is a bond of love and respect. Every lesson strengthens the trust between you and your furry companion.</p>
+                        </div>
+                        <div class="tab-pane fade" id="service-2" role="tabpanel" aria-labelledby="service-2-tab">
+                            <p class="mb-0">A tired dog is a happy dog. Exercise is essential for their well-being and keeps them energized and healthy.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Services End -->
+        <!-- Vet Service Appointment Start -->
+<div class="container-fluid vet-appointment-section py-6" id="vetAppointment" style="background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 text-center">
+                <h2 class="display-5 text-uppercase mb-4 text-primary fw-bold" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.1);">
+                    <span class="paw-print">🐾</span> Schedule Your Pet's Care <span class="paw-print">🐾</span>
+                </h2>
+                <p class="lead text-muted mb-5" style="font-size: 1.25rem;">
+                    Let's pamper your furry friend! Fill the form below to book a loving care session ❤️
+                </p>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <form id="vetAppointmentForm" action="#" method="POST" class="shadow-lg rounded-4 p-5" style="background: rgba(255,255,255,0.95);">
+                    <div class="row g-4">
+                        <!-- Doctor Information -->
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input type="text" class="form-control border-primary border-2 rounded-pill" id="doctor-name" 
+                                       placeholder="Dr. Paws Whiskers" required>
+                                <label for="doctor-name" class="text-muted">
+                                    <i class="fas fa-user-md me-2 text-primary"></i>Veterinarian's Name
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input type="tel" class="form-control border-success border-2 rounded-pill" 
+                                       id="doctor-number" placeholder="+123 456 7890" required>
+                                <label for="doctor-number" class="text-muted">
+                                    <i class="fas fa-phone-alt me-2 text-success"></i>Contact Number
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Location & Services -->
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input type="text" class="form-control border-info border-2 rounded-pill" 
+                                       id="location" placeholder="Clinic Address" required>
+                                <label for="location" class="text-muted">
+                                    <i class="fas fa-map-marker-alt me-2 text-info"></i>Clinic Location
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <select class="form-select border-warning border-2 rounded-pill" 
+                                        id="vet-services" required>
+                                    <option value="">Choose Service</option>
+                                    <option value="general-checkup">🐕 General Checkup</option>
+                                    <option value="vaccination">💉 Vaccination</option>
+                                    <option value="surgery">⚕️ Surgery</option>
+                                    <option value="emergency-care">🚑 Emergency Care</option>
+                                    <option value="grooming">✂️ Spa & Grooming</option>
+                                    <option value="dental-care">🦷 Dental Care</option>
+                                </select>
+                                <label for="vet-services" class="text-muted">
+                                    <i class="fas fa-heartbeat me-2 text-warning"></i>Required Service
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Time Selection -->
+                        <div class="col-md-6">
+                            <div class="card time-card bg-light border-0 h-100">
+                                <div class="card-body">
+                                    <label class="form-label text-purple"><i class="fas fa-clock me-2"></i>Preferred Time Slot</label>
+                                    <div class="row g-2">
+                                        <div class="col-6">
+                                            <input type="time" class="form-control border-start-4 border-primary" 
+                                                   id="from-time" required>
+                                        </div>
+                                        <div class="col-6">
+                                            <input type="time" class="form-control border-start-4 border-danger" 
+                                                   id="to-time" required>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Service Description -->
+                        <div class="col-md-6">
+                            <div class="h-100">
+                                <div class="form-floating">
+                                    <textarea class="form-control border-2 border-pink h-100" 
+                                              id="description" style="height: 120px;" 
+                                              placeholder="Tell us about your pet's needs..."></textarea>
+                                    <label for="description" class="text-muted">
+                                        <i class="fas fa-comment-dots me-2 text-pink"></i>Special Instructions
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="text-center mt-5">
+                        <button type="submit" class="btn btn-lg btn-gradient">
+                            Book Now &nbsp; <i class="fas fa-paw"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .vet-appointment-section {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .paw-print {
+        animation: bounce 1.5s infinite;
+    }
+
+    .btn-gradient {
+        background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+        color: white;
+        border: none;
+        padding: 15px 40px;
+        border-radius: 30px;
+        transition: all 0.3s ease;
+    }
+
+    .btn-gradient:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    .form-control:focus {
+        box-shadow: 0 0 8px rgba(78, 205, 196, 0.2);
+    }
+
+    .time-card {
+        background: rgba(255,255,255,0.9);
+        border-radius: 20px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    }
+
+    @keyframes bounce {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+    }
+
+    .border-pink { border-color: #ff6b6b !important; }
+    .text-pink { color: #ff6b6b !important; }
+</style>
+
+<!-- Add Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<!-- Vet Service Appointment End -->
+<script>
+    function redirectToPetDetails(event) {
+        event.preventDefault();
+
+        // Collect form data
+        var form = document.getElementById('petDetailsForm');
+        var formData = new FormData(form);
+
+        // Prepare the data to be passed in the URL
+        var url = 'PetLostDetails.html?';
+        formData.forEach(function(value, key) {
+            url += encodeURIComponent(key) + '=' + encodeURIComponent(value) + '&';
+        });
+
+        // Redirect to PetLostDetails.html with GET method and form data
+        window.location.href = url;
+    }
+</script>
+
+<!-- Lost & Found Section -->
+<div class="container-fluid lost-found-section py-6">
+    <div class="container">
+        <div class="section-header text-center mb-5">
+            <h2 class="display-4 fw-bold text-danger">🚨 Lost & Found <span class="text-dark">Pet Alert</span></h2>
+            <div class="alert alert-danger d-inline-block">
+                ⚠️ Only JPG/JPEG/PNG/GIF allowed!
+            </div>
+        </div>
+
+        <form class="lost-found-form shadow-lg">
+            <div class="file-upload-area text-center mb-4">
+                <div class="upload-box py-5">
+                    <i class="fas fa-cloud-upload-alt fa-3x text-danger"></i>
+                    <h5 class="my-3">Drag & Drop Pet Photo</h5>
+                    <input type="file" class="form-control" accept="image/*" required>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <label class="form-label"><i class="fas fa-dog text-danger"></i> Breed</label>
+                    <input type="text" class="form-control input-danger" placeholder="Golden Retriever" required>
+                </div>
+                
+                <div class="col-md-6">
+                    <label class="form-label"><i class="fas fa-map-marker-alt text-danger"></i> Last Seen</label>
+                    <input type="text" class="form-control input-danger" placeholder="Central Park" required>
+                </div>
+                
+                <div class="col-12">
+                    <label class="form-label"><i class="fas fa-info-circle text-danger"></i> Unique Features</label>
+                    <textarea class="form-control input-danger" rows="3" placeholder="Blue collar, scar on left ear..."></textarea>
+                </div>
+                
+                <div class="col-md-6">
+                    <label class="form-label"><i class="fas fa-phone text-danger"></i> Contact</label>
+                    <input type="tel" class="form-control input-danger" placeholder="+91 98765 43210" required>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5">
+                <button type="submit" class="btn btn-danger btn-lg px-5 py-3">
+                    <i class="fas fa-bell"></i> Alert Community
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<style>
+.lost-found-section {
+    background: linear-gradient(135deg, #fff5f5 0%, #ffe3e3 100%);
+}
+
+.lost-found-form {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+}
+
+.file-upload-area {
+    border: 3px dashed #ff6b6b;
+    border-radius: 15px;
+    background: rgba(255,107,107,0.1);
+}
+
+.input-danger {
+    border: 2px solid #ff6b6b;
+    border-radius: 10px;
+    padding: 1rem;
+}
+
+.input-danger:focus {
+    box-shadow: 0 0 10px rgba(255,107,107,0.3);
+}
+</style>
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-light mt-5 py-5">
+        <div class="container pt-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-uppercase border-start border-5 border-primary ps-3 mb-4">Get In Touch</h5>
+                    <p class="mb-4">Pain is inevitable, but it is temporary. Challenges arise, but they are part of the process, and pain eventually fades.</p>
+                    <p class="mb-2"><i class="bi bi-geo-alt text-primary me-2"></i>123 Gandhi Nagar,Coimbatore</p>
+                    <p class="mb-2"><i class="bi bi-envelope-open text-primary me-2"></i>pawfinders@gmail.com</p>
+                    <p class="mb-0"><i class="bi bi-telephone text-primary me-2"></i>+91 78960 34678</p>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-uppercase border-start border-5 border-primary ps-3 mb-4">Quick Links</h5>
+                    <div class="d-flex flex-column justify-content-start">
+                        <a class="text-body mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Home</a>
+                        <a class="text-body mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>About Us</a>
+                        <a class="text-body mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Our Services</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-uppercase border-start border-5 border-primary ps-3 mb-4">Popular Links</h5>
+                    <div class="d-flex flex-column justify-content-start">
+                        <a class="text-body mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Home</a>
+                        <a class="text-body mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>About Us</a>
+                        <a class="text-body mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Our Services</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-uppercase border-start border-5 border-primary ps-3 mb-4">Newsletter</h5>
+                    <form action="">
+                        <div class="input-group">
+                            <input type="text" class="form-control p-3" placeholder="Your Email">
+                            <button class="btn btn-primary">Sign Up</button>
+                        </div>
+                    </form>
+                    <h6 class="text-uppercase mt-4 mb-3">Follow Us</h6>
+                    <div class="d-flex">
+                        <a class="btn btn-outline-primary btn-square me-2" href="#"><i class="bi bi-twitter"></i></a>
+                        <a class="btn btn-outline-primary btn-square me-2" href="#"><i class="bi bi-facebook"></i></a>
+                        <a class="btn btn-outline-primary btn-square me-2" href="#"><i class="bi bi-linkedin"></i></a>
+                        <a class="btn btn-outline-primary btn-square" href="#"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-12 text-center text-body">
+                    <a class="text-body" href="">Terms & Conditions</a>
+                    <span class="mx-1">|</span>
+                    <a class="text-body" href="">Privacy Policy</a>
+                    <span class="mx-1">|</span>
+                    <a class="text-body" href="">Customer Support</a>
+                    <span class="mx-1">|</span>
+                    <a class="text-body" href="">Payments</a>
+                    <span class="mx-1">|</span>
+                    <a class="text-body" href="">Help</a>
+                    <span class="mx-1">|</span>
+                    <a class="text-body" href="">FAQs</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid bg-dark text-white-50 py-4">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-md-0">&copy; <a class="text-white" href="#">Paw Finders</a>. All Rights Reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="mb-0">Designed by <a class="text-white" href="https://htmlcodex.com">PawFinders Codex</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+    <!-- Chatbot Button -->
+    <a href="http://localhost:8080/" target="_blank" class="chatbot-button">
+        <i class="fas fa-comments"></i>Pet Care Tips
+    </a>
+    
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-primary py-3 fs-4 back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    <script>
+        document.getElementById('vetAppointmentForm').addEventListener('submit', async function (event) {
+    event.preventDefault();
+
+    const formData = {
+        doctorName: document.getElementById('doctor-name').value,
+        doctorNumber: document.getElementById('doctor-number').value,
+        location: document.getElementById('location').value,
+        fromTime: document.getElementById('from-time').value,
+        toTime: document.getElementById('to-time').value,
+        vetService: document.getElementById('vet-services').value,
+        description: document.getElementById('description').value
+    };
+
+    const response = await fetch('/api/vet-appointment', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+    });
+
+    const result = await response.json();
+    alert(result.message);
+});
+
+document.getElementById("petDetailsForm").addEventListener("submit", async function(event) {
+    event.preventDefault();
+    
+    let formData = new FormData(this);
+
+    const response = await fetch("http://localhost:5000/savePet", {
+        method: "POST",
+        body: formData,
+    });
+
+    const result = await response.json();
+    alert(result.message);
+});
+
+    </script>
+</body>
+<style>
+    .chatbot-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #28a745;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    z-index: 9999; /* Ensure it stays on top */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth hover effect */
+}
+
+.chatbot-button i {
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+.chatbot-button:hover {
+    background-color: #218838;
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+</style>
+
+</html>

@@ -1,0 +1,59 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+package-lock.json
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+venv/
+env/
+*.pyc
+
+# Environment Variables
+.env
+.env.local
+*.env
+
+# Database
+*.sqlite
+*.db
+
+# Logs
+logs/
+*.log
+
+# Uploads (keep structure, ignore content)
+uploads/*
+!uploads/.gitkeep
+
+# ML Models (large files)
+*.h5
+*.hdf5
+*.pkl
+*.pickle
+*.pt
+*.pth
+
+# Keep essential model files
+!backend/model/create_model_template.py
+!backend/model/allDogsLables.npy
+
+# IDEs
+.vscode/
+.idea/
+*.code-workspace
+
+# OS Files
+.DS_Store
+Thumbs.db
+*.swp
+
+# Build & Cache
+dist/
+build/
+.cache/
+*.tmp

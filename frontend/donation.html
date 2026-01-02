@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support Pet Adoption - PawsForLife</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
+    <style>
+        :root {
+            --primary-color: #3BA776;
+            --secondary-color: #FFD166;
+            --text-color: #2D3748;
+            --background-color: #F7FAFC;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, rgba(59,167,118,0.1) 0%, rgba(255,209,102,0.1) 100%);
+            padding: 4rem 1rem;
+            text-align: center;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .hero-title {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero-subtitle {
+            color: #4A5568;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .donation-container {
+            max-width: 480px;
+            margin: 3rem auto;
+            padding: 0 1rem;
+        }
+
+        .donation-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease;
+        }
+
+        .donation-card:hover {
+            transform: translateY(-2px);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .amount-selector {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .amount-option {
+            padding: 1.25rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-align: center;
+            font-weight: 600;
+            background: white;
+        }
+
+        .amount-option:hover {
+            border-color: var(--primary-color);
+            background: rgba(59,167,118,0.05);
+        }
+
+        .amount-option.active {
+            border-color: var(--primary-color);
+            background: rgba(59,167,118,0.1);
+        }
+
+        .custom-amount-container {
+            margin-top: 1.5rem;
+            opacity: 0;
+            height: 0;
+            transition: all 0.3s ease;
+        }
+
+        .custom-amount-container.visible {
+            opacity: 1;
+            height: auto;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.2s ease;
+        }
+
+        .input-field:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(59,167,118,0.2);
+        }
+
+        .donate-button {
+            width: 100%;
+            padding: 1rem;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .donate-button:hover {
+            background-color: #2F855A;
+            transform: translateY(-1px);
+        }
+
+        .donate-button:active {
+            transform: translateY(0);
+        }
+
+        .loading-spinner {
+            display: none;
+            margin-top: 1rem;
+        }
+
+        .spinner {
+            width: 2rem;
+            height: 2rem;
+            border: 3px solid rgba(255,255,255,0.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            opacity: 0.8;
+        }
+
+        .impact-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: rgba(59,167,118,0.05);
+            border-radius: 12px;
+        }
+
+        .stat-number {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .amount-selector {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero-section">
+        <h1 class="hero-title">Give Pets a Second Chance</h1>
+        <p class="hero-subtitle">Your donation helps provide food, shelter, and medical care for abandoned animals waiting for their forever home.</p>
+    </section>
+
+
+    <div class="donation-container">
+        <div class="donation-card">
+            <div class="impact-stats">
+                <div class="stat-item">
+                    <div class="stat-number">1,200+</div>
+                    <div class="stat-label">Pets Rescued</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">85%</div>
+                    <div class="stat-label">Adoption Rate</div>
+                </div>
+            </div>
+
+            <form id="donation-form">
+                <div class="form-group">
+                    <div class="amount-selector">
+                        <button type="button" class="amount-option" data-amount="500">₹500</button>
+                        <button type="button" class="amount-option" data-amount="1000">₹1000</button>
+                        <button type="button" class="amount-option" data-amount="2000">₹2000</button>
+                        <button type="button" class="amount-option" id="custom-trigger">Other</button>
+                    </div>
+                </div>
+
+                <div class="form-group custom-amount-container" id="custom-amount">
+                    <input type="number" id="custom-value" class="input-field" placeholder="Enter custom amount (₹)" min="1">
+                </div>
+
+                <button type="submit" class="donate-button">
+                    <span class="button-text">Donate Now</span>
+                    <div class="loading-spinner" id="loading-spinner">
+                        <div class="spinner"></div>
+                    </div>
+                </button>
+            </form>
+        </div>
+
+        <div class="trust-badges">
+            <img src="https://static.vecteezy.com/system/resources/thumbnails/050/703/336/small/secure-payment-label-maximum-security-and-reliability-when-paying-online-png.png" alt="Secure Payment" width="40">
+            <img src="https://nonprofitfundraising.com/wp-content/uploads/2024/07/CNFP-Logo.png" alt="Certified Nonprofit" width="40">
+        </div>
+    </div>
+
+    <script>
+        const amountOptions = document.querySelectorAll('.amount-option');
+        const customTrigger = document.getElementById('custom-trigger');
+        const customAmountContainer = document.getElementById('custom-amount');
+        const customValueInput = document.getElementById('custom-value');
+
+        amountOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                // Remove active class from all options
+                amountOptions.forEach(opt => opt.classList.remove('active'));
+                
+                if (option === customTrigger) {
+                    customAmountContainer.classList.add('visible');
+                    customValueInput.focus();
+                } else {
+                    customAmountContainer.classList.remove('visible');
+                    option.classList.add('active');
+                }
+            });
+        });
+
+        document.getElementById('donation-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const activeAmount = document.querySelector('.amount-option.active');
+            let amount = activeAmount ? activeAmount.dataset.amount : null;
+            
+            if (!amount) {
+                amount = customValueInput.value;
+                if (!amount || amount < 1) {
+                    customValueInput.focus();
+                    customValueInput.classList.add('error');
+                    return;
+                }
+            }
+
+            // Show loading state
+            const button = document.querySelector('.donate-button');
+            button.disabled = true;
+            button.style.opacity = '0.8';
+            document.querySelector('.button-text').style.display = 'none';
+            document.getElementById('loading-spinner').style.display = 'block';
+
+            // Simulate payment processing
+            setTimeout(() => {
+                window.location.href = `/pay?totalValue=${amount}`;
+            }, 1000);
+        });
+
+        // Input validation
+        customValueInput.addEventListener('input', () => {
+            customValueInput.classList.remove('error');
+        });
+    </script>
+</body>
+</html>
